@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - metric-server-helm.yaml
+  - argo-workflows-helm.yaml
+  - tenant-chart-helm.yaml
+  - application-chart-helm.yaml
+  - eks-charts-helm.yaml
+  - kubecost-helm.yaml
+  - karpenter-helm.yaml
+  - tf-controller-helm.yaml
+  - terraform-git-v1.yaml
+  - capacitor-web-ui.yaml
+  - cronjob-ecr-updater.yaml
+  - producer-image-automation.yaml
+  - consumer-image-automation.yaml
+  - payments-image-automation.yaml
