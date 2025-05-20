@@ -13,3 +13,9 @@ spec:
   path: infrastructure/production
   prune: true
   validation: client
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: saas-infra-outputs
+        # Use this ConfigMap if it exists, but proceed if it doesn't.
+        optional: false
