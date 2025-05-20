@@ -1,5 +1,5 @@
 # NodePool Configuration
-apiVersion: karpenter.sh/v1beta1
+apiVersion: karpenter.sh/v1
 kind: NodePool
 metadata:
   name: application
@@ -27,6 +27,8 @@ spec:
           operator: In
           values: ["on-demand", "spot"]
       nodeClassRef:
+        group: karpenter.k8s.aws
+        kind: EC2NodeClass
         name: default
   limits:
     cpu: 1000
