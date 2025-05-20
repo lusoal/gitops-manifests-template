@@ -12,7 +12,7 @@ spec:
     name: flux-system
   path: infrastructure/production
   prune: true
-  validation: client
+  # validation: client
   postBuild:
     substituteFrom:
       - kind: ConfigMap
