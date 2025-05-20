@@ -36,6 +36,9 @@ spec:
     kind: GitRepository
     name: flux-system
   git:
+    checkout:
+      ref:
+        branch: main
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
@@ -43,7 +46,7 @@ spec:
     push:
       branch: main
   update:
-    path: application-plane/production/tenants/
+    path: ./application-plane/production/tenants/
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
@@ -56,6 +59,9 @@ spec:
     kind: GitRepository
     name: flux-system
   git:
+    checkout:
+      ref:
+        branch: main
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
@@ -63,4 +69,4 @@ spec:
     push:
       branch: main
   update:
-    path: application-plane/production/pooled-envs/
+    path: ./application-plane/production/pooled-envs/
