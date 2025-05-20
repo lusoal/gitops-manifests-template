@@ -43,7 +43,7 @@ spec:
     push:
       branch: main
   update:
-    path: application-plane/production/tenants/
+    path: ./application-plane/production/tenants/
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
@@ -63,4 +63,4 @@ spec:
     push:
       branch: main
   update:
-    path: application-plane/production/pooled-envs/
+    path: ./application-plane/production/pooled-envs/
