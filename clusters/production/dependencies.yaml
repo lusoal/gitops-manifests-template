@@ -1,4 +1,4 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: dependencies
@@ -12,4 +12,10 @@ spec:
     name: flux-system
   path: infrastructure/production/dependencies
   prune: true
-  validation: client
+  # validation: client
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: saas-infra-outputs
+        # Use this ConfigMap if it exists, but proceed if it doesn't.
+        optional: false
