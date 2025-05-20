@@ -8,6 +8,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./gitops/application-plane/production/pooled-envs
+  path: application-plane/production/pooled-envs
   prune: true
   validation: client
