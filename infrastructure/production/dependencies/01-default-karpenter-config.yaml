@@ -34,7 +34,8 @@ kind: EC2NodeClass
 metadata:
   name: default
 spec:
-  amiFamily: AL2 # Amazon Linux 2
+  amiSelectorTerms:
+    - alias: al2023@latest
   role: "KarpenterNodeRole-${cluster_name}" # Replace with your cluster name
   subnetSelectorTerms:
     - tags:
