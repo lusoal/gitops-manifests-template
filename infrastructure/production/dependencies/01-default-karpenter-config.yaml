@@ -27,8 +27,8 @@ spec:
     cpu: 1000
     memory: 2000Gi
   disruption:
-    consolidationPolicy: WhenUnderutilized
-    expireAfter: 720h # 30 * 24h = 720h
+    consolidationPolicy: WhenEmptyOrUnderutilized
+    consolidateAfter: 1m
 ---
 # EC2NodeClass Configuration
 apiVersion: karpenter.k8s.aws/v1
