@@ -8,6 +8,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./gitops/application-plane/production/tenants
+  path: application-plane/production/tenants
   prune: true
   validation: client
