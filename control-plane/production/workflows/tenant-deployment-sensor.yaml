@@ -10,7 +10,7 @@ spec:
   sqs:
     tenant-deployment:
       jsonBody: true
-      region: "{aws_region}"
+      region: "${aws_region}"
       queue: "argoworkflows-deployment-queue" # Static value defined in TF module
       waitTimeSeconds: 20
 ---
@@ -51,11 +51,13 @@ spec:
                     - name: RELEASE_VERSION
                       value: "" # Valid values are: silo, pool, hybrid
                     - name: REPO_URL
-                      value: "{aws_codecommit_flux_clone_url_ssh}"
+                      value: "${gitea_url}/admin/eks-saas-gitops.git"
                     - name: GIT_USER_EMAIL
-                      value: "{ssh_public_key_id}"
+                      value: "admin@example.com"
                     - name: GIT_USERNAME
-                      value: "{ssh_public_key_id}"
+                      value: "admin"
+                    - name: GIT_TOKEN
+                      value: "${gitea_token}"
                     - name: GIT_BRANCH
                       value: "main" # Can change based on your configs
                 templates:
@@ -78,13 +80,6 @@ spec:
                       resources:
                         requests:
                           storage: 1Gi
-                volumes:
-                  - name: ssh-key
-                    secret:
-                      secretName: github-ssh-key # Secret created earlier
-                      items:
-                        - key: ssh-privatekey
-                          path: id_rsa
           parameters:
             - src:
                 dependencyName: tenant-deployment-dep
