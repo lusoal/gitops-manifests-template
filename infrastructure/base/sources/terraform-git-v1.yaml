@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 300s
-  url: "${gitea_url}/admin/eks-saas-gitops.git" # Same repository for gitops components, could be sliptted
+  url: "http://${gitea_url}:3000/admin/eks-saas-gitops.git" # Same repository for gitops components, could be sliptted
   ref:
     tag: "v0.0.1"
   secretRef:
