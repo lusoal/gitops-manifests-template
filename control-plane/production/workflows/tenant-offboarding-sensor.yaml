@@ -51,7 +51,7 @@ spec:
                     - name: TENANT_TIER
                       value: "" # Valid values are: premium, advanced, basic
                     - name: REPO_URL
-                      value: "${gitea_url}/admin/eks-saas-gitops.git"
+                      value: "http://${gitea_url}:3000/admin/eks-saas-gitops.git"
                     - name: GIT_USER_EMAIL
                       value: "admin@example.com"
                     - name: GIT_USERNAME
