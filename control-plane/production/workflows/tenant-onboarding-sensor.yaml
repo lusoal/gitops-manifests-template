@@ -53,7 +53,7 @@ spec:
                     - name: RELEASE_VERSION
                       value: "" # I.E. 0.0 or 1.0
                     - name: REPO_URL
-                      value: "${gitea_url}/admin/eks-saas-gitops.git"
+                      value: "http://${gitea_url}:3000/admin/eks-saas-gitops.git"
                     - name: GIT_USER_EMAIL
                       value: "admin@example.com"
                     - name: GIT_USERNAME
